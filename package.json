@@ -1,12 +1,17 @@
 {
   "name": "dw-gulp-4-sass-nunjucks",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple boilerplate for Gulp 4 with SASS, Nunjucks and JavaScript support.",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
+  "scripts": {},
+  "keywords": [
+    "gulp",
+    "nunjucks",
+    "sass",
+    "javascript",
+    "browser-sync",
+    "boilerplate"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -14,9 +19,11 @@
     "cssnano": "^5.0.6",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^7.1.0",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.1.0",
+    "gulp-svgmin": "^3.0.0",
     "gulp-terser": "^2.0.1",
     "postcss": "^8.3.1"
   }
