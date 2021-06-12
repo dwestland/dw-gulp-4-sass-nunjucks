@@ -24,14 +24,14 @@ Move into directory:
 ```
 cd dw-gulp-4-sass-nunjucks
 ```
-Install devDependencies
+Install devDependencies:
 ```
 npm i
 ```
-Run Gulp
+Run Gulp:
 ```
 gulp
 ```
 ---
-License
-The code is available under the ISC License (Use it any way you want).
+## License
+The code is available under the ISC License (use it any way you want).
