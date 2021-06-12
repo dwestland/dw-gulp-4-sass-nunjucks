@@ -17,7 +17,7 @@ function copyPublic(cb) {
  }
 
 // Nunjucks Task
-function nunjucks(cb) {
+function nunjucksTask(cb) {
   src("src/pages/**/*.html")
     .pipe(
       nunjucksRender({
@@ -29,7 +29,7 @@ function nunjucks(cb) {
 }
 
 // Sass Task
-function scssTask(){
+function scssTask() {
   return src('src/scss/*.scss', { sourcemaps: true })
     .pipe(sass())
     .pipe(postcss([cssnano()]))
@@ -59,7 +59,7 @@ function svgTask() {
 }
 
 // Browsersync Tasks
-function browsersyncServe(cb){
+function browsersyncServe(cb) {
   browsersync.init({
     server: {
       baseDir: 'dist'
@@ -68,15 +68,16 @@ function browsersyncServe(cb){
   cb();
 }
 
-function browsersyncReload(cb){
+function browsersyncReload(cb) {
   browsersync.reload();
   cb();
 }
 
 // Watch Task
-function watchTask(){
-  watch('src/**/*.html', series(nunjucks, browsersyncReload));
-  watch(['src/scss/**/*.scss', 'src/js/**/*.js'], series(scssTask, jsTask, browsersyncReload));
+function watchTask() {
+  watch('src/pages/**/*.html', series(nunjucksTask, browsersyncReload));
+  watch('src/scss/**/*.scss', series(scssTask, browsersyncReload));
+  watch('src/js/**/*.js', series(jsTask, browsersyncReload));
   watch('src/public/**/*', series(copyPublic, browsersyncReload));
   watch('src/images/*', series(imageTask, browsersyncReload));
   watch('src/svg/*', series(svgTask, browsersyncReload));
@@ -85,7 +86,7 @@ function watchTask(){
 // Default Gulp task
 exports.default = series(
   copyPublic,
-  nunjucks,
+  nunjucksTask,
   scssTask,
   jsTask,
   imageTask,

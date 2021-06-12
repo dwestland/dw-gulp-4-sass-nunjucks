@@ -16,7 +16,7 @@ Simple boilerplate for Gulp 4 with Nunjucks, SASS and JavaScript support. Nunjuc
 - postcss
 ---
 ## Quick Start
-install:
+Install:
 ```
 git clone https://github.com/dwestland/dw-gulp-4-sass-nunjucks
 ```
