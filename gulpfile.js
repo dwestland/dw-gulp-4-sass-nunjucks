@@ -75,15 +75,15 @@ function browsersyncReload(cb) {
 
 // Watch Task
 function watchTask() {
+  watch('src/public/**/*', series(copyPublic, browsersyncReload));
   watch('src/pages/**/*.html', series(nunjucksTask, browsersyncReload));
   watch('src/scss/**/*.scss', series(scssTask, browsersyncReload));
   watch('src/js/**/*.js', series(jsTask, browsersyncReload));
-  watch('src/public/**/*', series(copyPublic, browsersyncReload));
   watch('src/images/*', series(imageTask, browsersyncReload));
   watch('src/svg/*', series(svgTask, browsersyncReload));
 }
 
-// Default Gulp task
+// Default Gulp Task
 exports.default = series(
   copyPublic,
   nunjucksTask,
